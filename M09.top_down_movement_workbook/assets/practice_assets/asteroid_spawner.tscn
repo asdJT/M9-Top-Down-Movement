@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://chkrmqdqbln4f"]
+
+[ext_resource type="Script" path="res://assets/practice_assets/asteroid_spawner.gd" id="1_kwygu"]
+
+[node name="AsteroidSpawner" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kwygu")

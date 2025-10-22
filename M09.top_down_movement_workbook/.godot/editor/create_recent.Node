@@ -1,0 +1,9 @@
+SubViewport
+CanvasGroup
+Sprite2D
+Camera2D
+CollisionPolygon2D
+CollisionShape2D
+StaticBody2D
+Node
+CharacterBody2D
