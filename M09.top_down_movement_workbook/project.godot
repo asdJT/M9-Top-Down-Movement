@@ -13,7 +13,7 @@ config_version=5
 config/name="M09. Top Down Movement (Workbook)"
 config/tags=PackedStringArray("workbook")
 run/main_scene="res://lessons/game.tscn"
-config/features=PackedStringArray("4.3")
+config/features=PackedStringArray("4.5")
 config/icon="res://icon_top_down_movement.png"
 
 [display]

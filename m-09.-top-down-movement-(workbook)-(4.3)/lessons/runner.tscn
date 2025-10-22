@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv6pavumkvn3"]
+
+[ext_resource type="Script" path="res://lessons/runner.gd" id="1_iph4m"]
+[ext_resource type="PackedScene" uid="uid://bm8s1oaoxngwq" path="res://assets/runner/runner_visual_red.tscn" id="2_oydgj"]
+[ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="3_70jnb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gjuk1"]
+radius = 22.0
+
+[node name="Runner" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_iph4m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 32)
+shape = SubResource("CircleShape2D_gjuk1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.156863)
+position = Vector2(0, 43)
+scale = Vector2(-0.599999, 0.520001)
+texture = ExtResource("3_70jnb")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="RunnerVisualRed" parent="SubViewport" instance=ExtResource("2_oydgj")]
+unique_name_in_owner = true
+position = Vector2(0, 46)
+scale = Vector2(0.5, 0.5)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbfpk2q8dua73"]
+
+[ext_resource type="Texture2D" uid="uid://tgs14f485wph" path="res://assets/kenney-particles/smoke_04.png" id="1_8kefp"]
+
+[sub_resource type="Curve" id="Curve_nowjp"]
+_data = [Vector2(0, 0), 0.0, 6.663494, 0, 0, Vector2(0.22537878, 1), 0.0, 0.0, 0, 0, Vector2(0.8125, 0.06964469), 0.0, 0.0, 0, 0, Vector2(1, 0), -0.37143832, 0.0, 1, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_mdnfm"]
+curve = SubResource("Curve_nowjp")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hmoi0"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+scale_min = 0.19999999
+scale_max = 0.19999999
+scale_curve = SubResource("CurveTexture_mdnfm")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+texture = ExtResource("1_8kefp")
+lifetime = 3.0
+process_material = SubResource("ParticleProcessMaterial_hmoi0")
