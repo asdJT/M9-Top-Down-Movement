@@ -1,4 +1,6 @@
-res://lessons/runner.tscn
-res://addons/gdpractice/assets/theme.tres
-res://assets/character_contour.gdshader
 res://lessons/test_particlea.tscn
+res://assets/character_contour.gdshader
+res://lessons/test2_particlea.tscn
+res://lessons/runner.tscn
+res://lessons/dust_praticles.tscn
+res://lessons/runner.gd

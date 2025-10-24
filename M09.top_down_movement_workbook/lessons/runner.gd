@@ -6,14 +6,17 @@ extends CharacterBody2D
 @export var deceleration := 1080.0
 
 @onready var _runner_visual: RunnerVisual = %RunnerVisualRed
+@onready var _dust: GPUParticles2D = %Dust
 
 func _physics_process(delta: float) -> void :
 	var direction := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	if direction.length() > 0.0:
+		_dust.emitting = true
 		var desired_velocity := max_speed * direction
 		velocity = velocity.move_toward(desired_velocity, acceleration * delta)
 	else:
+		_dust.emitting = false
 		velocity = velocity.move_toward(Vector2.ZERO, deceleration * delta)
 		
 	if direction.length() > 0.0:

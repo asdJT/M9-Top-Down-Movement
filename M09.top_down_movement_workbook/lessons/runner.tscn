@@ -1,9 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://cv6pavumkvn3"]
+[gd_scene load_steps=16 format=3 uid="uid://cv6pavumkvn3"]
 
 [ext_resource type="Script" uid="uid://bh2oe2oof44lj" path="res://lessons/runner.gd" id="1_iph4m"]
 [ext_resource type="PackedScene" uid="uid://bm8s1oaoxngwq" path="res://assets/runner/runner_visual_red.tscn" id="2_oydgj"]
+[ext_resource type="Texture2D" uid="uid://bkq3gfbp5fwqx" path="res://assets/circle_64x64.png" id="2_x5rx3"]
 [ext_resource type="Texture2D" uid="uid://dbcmxo51msi8m" path="res://assets/runner/shadow.png" id="3_70jnb"]
 [ext_resource type="Shader" uid="uid://cp1mtkh46vlsl" path="res://assets/character_contour.gdshader" id="4_2nvb5"]
+
+[sub_resource type="Curve" id="Curve_cl8lt"]
+_data = [Vector2(0.23295453, 1), 0.0, 0.17070925, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_w3rti"]
+curve = SubResource("Curve_cl8lt")
+
+[sub_resource type="Gradient" id="Gradient_d46nv"]
+offsets = PackedFloat32Array(0, 0.35654008)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xpdmi"]
+gradient = SubResource("Gradient_d46nv")
+
+[sub_resource type="Curve" id="Curve_agra7"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0m2ns"]
+curve = SubResource("Curve_agra7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pb15w"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, -10, 0)
+scale_curve = SubResource("CurveTexture_0m2ns")
+color_ramp = SubResource("GradientTexture1D_xpdmi")
+alpha_curve = SubResource("CurveTexture_w3rti")
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gjuk1"]
 radius = 22.0
@@ -21,6 +50,13 @@ viewport_path = NodePath("SubViewport")
 [node name="Runner" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_iph4m")
+
+[node name="Dust" type="GPUParticles2D" parent="."]
+unique_name_in_owner = true
+emitting = false
+amount = 5
+texture = ExtResource("2_x5rx3")
+process_material = SubResource("ParticleProcessMaterial_pb15w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 32)
