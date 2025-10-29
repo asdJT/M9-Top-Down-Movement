@@ -1,18 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://dbhm1u7usp88e"]
+[gd_scene load_steps=11 format=3 uid="uid://dbhm1u7usp88e"]
 
+[ext_resource type="Script" uid="uid://b3ch6il2xt8bb" path="res://lessons/game.gd" id="1_48faf"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_eyt8k"]
 [ext_resource type="PackedScene" uid="uid://cv6pavumkvn3" path="res://lessons/runner.tscn" id="1_w68je"]
 [ext_resource type="PackedScene" uid="uid://w10qa0xbehkk" path="res://lessons/simple_obstacle.tscn" id="2_qi5q1"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="2_sepuf"]
 [ext_resource type="PackedScene" uid="uid://6fggknqqx35t" path="res://lessons/circuit.tscn" id="4_k37an"]
+[ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_viysf"]
+[ext_resource type="Script" uid="uid://3qgnfjj0cbyc" path="res://assets/countdown/count_down.gd" id="8_tpjcj"]
+[ext_resource type="Shader" uid="uid://0ifa0i2oc7c8" path="res://assets/blur.gdshader" id="9_tpjcj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8c4bg"]
+shader = ExtResource("9_tpjcj")
+shader_parameter/blur_amount = 0.0
+shader_parameter/tint = Color(0, 0, 0, 1)
+shader_parameter/tint_amount = 0.0
+shader_parameter/saturation = 1.0
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_48faf")
 
 [node name="Runner" parent="." instance=ExtResource("1_w68je")]
+unique_name_in_owner = true
 position = Vector2(1554, 521)
 
 [node name="FinishLine" parent="." instance=ExtResource("2_sepuf")]
+unique_name_in_owner = true
 position = Vector2(579, 1375)
 area_width = 256
 
@@ -26,3 +40,71 @@ position = Vector2(2104, 573)
 
 [node name="Circuit" parent="." instance=ExtResource("4_k37an")]
 position = Vector2(0, -4)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CountDown" type="Label" parent="CanvasLayer"]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -167.0
+offset_top = -109.5
+offset_right = 167.0
+offset_bottom = 109.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("7_viysf")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_tpjcj")
+metadata/_custom_type_script = "uid://3qgnfjj0cbyc"
+
+[node name="PauseScreen" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -957.0
+offset_top = -539.0
+offset_right = -878.78845
+offset_bottom = -461.8878
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(24.521368, 13.984615)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BlurColorRect" type="ColorRect" parent="CanvasLayer/PauseScreen"]
+material = SubResource("ShaderMaterial_8c4bg")
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 34.655003
+anchor_bottom = 26.315
+offset_right = -1346.2001
+offset_bottom = -1012.6
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(34.65485, 26.3146)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PauseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PauseScreen/PanelContainer"]
+layout_mode = 2

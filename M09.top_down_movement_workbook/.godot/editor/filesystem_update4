@@ -1,5 +1,5 @@
 res://lessons/game.tscn
 res://assets/character_contour.gdshader
-res://lessons/runner.tscn
-res://lessons/simple_obstacle.tscn
+res://lessons/game.gd
 res://lessons/runner.gd
+res://lessons/runner.tscn

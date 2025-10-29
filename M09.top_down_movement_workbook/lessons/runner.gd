@@ -1,3 +1,4 @@
+class_name Runner
 extends CharacterBody2D
 
 @export var max_speed := 600.0
