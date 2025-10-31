@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://dj6ye05dbiqpi"]
+
+[ext_resource type="Theme" uid="uid://bk3rqtt0xeorm" path="res://addons/gdpractice/assets/theme.tres" id="1_6f8pp"]
+[ext_resource type="Script" uid="uid://cxm3a8sarcd27" path="res://lessons/pause_screen.gd" id="2_qb0gi"]
+[ext_resource type="Shader" uid="uid://0ifa0i2oc7c8" path="res://assets/blur.gdshader" id="2_vtnhc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpjcj"]
+shader = ExtResource("2_vtnhc")
+shader_parameter/blur_amount = 3.090000146775
+shader_parameter/tint = Color(0, 0, 0, 1)
+shader_parameter/tint_amount = 0.0
+shader_parameter/saturation = 1.0
+
+[node name="PauseScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1841.3748
+offset_bottom = -1002.6293
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(24.521368, 13.984615)
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("1_6f8pp")
+script = ExtResource("2_qb0gi")
+
+[node name="BlurColorRect" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_tpjcj")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 818.68567
+offset_bottom = 341.26132
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.08766871, 0.18515964)
+
+[node name="UIPanelContainer" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.014784
+offset_top = -29.284925
+offset_right = 218.71228
+offset_bottom = 150.13408
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.18310036, 0.3118794)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UIPanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="UIPanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIPanelContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="UIPanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="UIPanelContainer/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"

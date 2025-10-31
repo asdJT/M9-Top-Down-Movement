@@ -1,11 +1,16 @@
-[gd_resource type="Theme" load_steps=43 format=3 uid="uid://bk3rqtt0xeorm"]
+[gd_resource type="Theme" load_steps=46 format=3 uid="uid://bk3rqtt0xeorm"]
 
 [ext_resource type="FontFile" uid="uid://d3u2nhkuevn1l" path="res://addons/gdpractice/assets/fonts/Inter-Bold.ttf" id="1_rk1hk"]
+[ext_resource type="StyleBox" uid="uid://ct1vc35yrh2c2" path="res://button_style.tres" id="1_xp0w5"]
 [ext_resource type="FontFile" uid="uid://deeixt6cs64ak" path="res://addons/gdpractice/assets/fonts/Inter-SemiBold.ttf" id="2_q1phb"]
 [ext_resource type="FontFile" uid="uid://btiybsu6acuy7" path="res://addons/gdpractice/assets/fonts/Montserrat-Bold.ttf" id="3_sfnh1"]
 [ext_resource type="FontFile" uid="uid://h13sewj2ined" path="res://addons/gdpractice/assets/fonts/Inter-BoldItalic.otf" id="4_s6jil"]
 [ext_resource type="FontFile" uid="uid://c5j5yg0bc1jec" path="res://addons/gdpractice/assets/fonts/Inter-Italic.otf" id="5_1mp7t"]
 [ext_resource type="FontFile" uid="uid://bhubmlwupfvt5" path="res://addons/gdpractice/assets/fonts/Inter-Medium.ttf" id="6_o0vcn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a0m0w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u6037"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgui7"]
 bg_color = Color(0.0745098, 0.0352941, 0.14902, 1)
@@ -179,7 +184,16 @@ corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6urd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp0w5"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+bg_color = Color(0.03529412, 0.047058824, 0.22745098, 0.5176471)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqakg"]
 content_margin_left = 3.0
@@ -316,6 +330,10 @@ vertical = true
 [resource]
 default_font = ExtResource("6_o0vcn")
 default_font_size = 14
+Button/font_sizes/font_size = 24
+Button/styles/hover = SubResource("StyleBoxFlat_a0m0w")
+Button/styles/normal = ExtResource("1_xp0w5")
+Button/styles/pressed = SubResource("StyleBoxFlat_u6037")
 ButtonPractice/base_type = &"Button"
 ButtonPractice/styles/focus = SubResource("StyleBoxFlat_kgui7")
 ButtonPractice/styles/hover = SubResource("StyleBoxFlat_pwgsg")
@@ -356,6 +374,7 @@ HBoxContainerTester/constants/separation = 0
 HBoxContainerTesterInput/base_type = &"HBoxContainer"
 HBoxContainerTesterInput/constants/separation = 10
 Label/colors/font_color = Color(0.921569, 0.878431, 1, 1)
+Label/font_sizes/font_size = 36
 LabelInputFeedback/base_type = &"Label"
 LabelInputFeedback/colors/font_color = Color(0.282353, 0.105882, 0.588235, 1)
 LabelInputFeedback/font_sizes/font_size = 12
@@ -459,7 +478,7 @@ MarginContainerTesterReport/constants/margin_right = 10
 MarginContainerTesterReport/constants/margin_top = 0
 MarginContainerTesterSubCheck/base_type = &"MarginContainerTesterCheck"
 MarginContainerTesterSubCheck/constants/margin_left = 26
-PanelContainer/styles/panel = SubResource("StyleBoxEmpty_k6urd")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_xp0w5")
 PanelContainerButtonTester/base_type = &"PanelContainer"
 PanelContainerButtonTester/styles/panel = SubResource("StyleBoxFlat_wqakg")
 PanelContainerHeader/base_type = &"PanelContainer"

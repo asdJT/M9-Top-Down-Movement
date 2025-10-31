@@ -1,5 +1,6 @@
 res://lessons/game.tscn
 res://assets/character_contour.gdshader
-res://lessons/game.gd
-res://lessons/runner.gd
-res://lessons/runner.tscn
+res://addons/gdpractice/assets/theme.tres
+res://button_style.tres
+res://lessons/pause_screen.gd
+res://lessons/pause_screen.tscn
