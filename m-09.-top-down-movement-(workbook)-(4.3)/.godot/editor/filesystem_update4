@@ -1,7 +1,0 @@
-res://lessons/runner.tscn
-res://lessons/simple_obstacle.tscn
-res://lessons/game.tscn
-res://lessons/circuit.tscn
-res://lessons/runner.gd
-res://assets/runner/runner_visual_red.tscn
-res://assets/runner/runner_visual.gd

@@ -33,8 +33,6 @@ func _physics_process(delta: float) -> void :
 		)
 	else:
 		_runner_visual.animation_name = RunnerVisual.Animations.IDLE
-		
-	
 	
 	move_and_slide()
 
