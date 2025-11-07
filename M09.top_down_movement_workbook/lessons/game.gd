@@ -3,17 +3,24 @@ extends Node2D
 @onready var _finish_line : FinishLine = %FinishLine
 @onready var _runner: Runner = %Runner
 @onready var _count_down: CountDown = %CountDown
+@onready var _bouncer: CharacterBody2D = %Bouncer
 
 func _ready() -> void:
 	_runner.set_physics_process(false)
+	_bouncer.set_physics_process(false)
 	_count_down.start_counting()
 	_count_down.counting_finished.connect(func() -> void:
 		_runner.set_physics_process(true)
+		await get_tree().create_timer(0.5).timeout
+		_bouncer.set_physics_process(true)
 	)
 	
 	_finish_line.body_entered.connect (func (body:Node) -> void :
 		if body is not Runner:
 			return
+		_bouncer.set_physics_process(false)
+		_bouncer._runner_visual.animation_name = RunnerVisual.Animations.IDLE
+		_bouncer._dust.emitting = false
 		var runner := body as Runner
 		runner.set_physics_process(false)
 		var destination_position := _finish_line.global_position + Vector2(0, 64)

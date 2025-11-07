@@ -1,4 +1,6 @@
-res://lessons/bouncer.tscn
+res://lessons/game.gd
+res://lessons/bouncer.gd
 res://assets/character_contour.gdshader
 res://addons/gdpractice/assets/theme.tres
-res://lessons/bouncer.gd
+res://ray_cast_2d.gd
+res://ray_test.tscn

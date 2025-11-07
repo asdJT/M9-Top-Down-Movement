@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dbhm1u7usp88e"]
+[gd_scene load_steps=11 format=3 uid="uid://dbhm1u7usp88e"]
 
 [ext_resource type="Script" uid="uid://b3ch6il2xt8bb" path="res://lessons/game.gd" id="1_48faf"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_eyt8k"]
 [ext_resource type="PackedScene" uid="uid://cv6pavumkvn3" path="res://lessons/runner.tscn" id="1_w68je"]
+[ext_resource type="PackedScene" uid="uid://budpgxkjtmw1f" path="res://lessons/bouncer.tscn" id="2_8c4bg"]
 [ext_resource type="PackedScene" uid="uid://w10qa0xbehkk" path="res://lessons/simple_obstacle.tscn" id="2_qi5q1"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="2_sepuf"]
 [ext_resource type="PackedScene" uid="uid://6fggknqqx35t" path="res://lessons/circuit.tscn" id="4_k37an"]
@@ -13,6 +14,10 @@
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_48faf")
+
+[node name="Bouncer" parent="." instance=ExtResource("2_8c4bg")]
+unique_name_in_owner = true
+position = Vector2(1186, 535)
 
 [node name="Runner" parent="." instance=ExtResource("1_w68je")]
 unique_name_in_owner = true
