@@ -17,7 +17,7 @@ script = ExtResource("1_48faf")
 
 [node name="Bouncer" parent="." instance=ExtResource("2_8c4bg")]
 unique_name_in_owner = true
-position = Vector2(1186, 535)
+position = Vector2(1185, 535)
 
 [node name="Runner" parent="." instance=ExtResource("1_w68je")]
 unique_name_in_owner = true
@@ -34,10 +34,29 @@ position = Vector2(1928, 1316)
 texture = ExtResource("1_eyt8k")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_qi5q1")]
-position = Vector2(2104, 573)
+position = Vector2(2117, 507)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_qi5q1")]
+position = Vector2(2792, 778)
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_qi5q1")]
+position = Vector2(2313, 1694)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("2_qi5q1")]
+position = Vector2(1033, 2186)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_qi5q1")]
+position = Vector2(3331, 1271)
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_qi5q1")]
+position = Vector2(3278, 1537)
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_qi5q1")]
+position = Vector2(2824, 2185)
 
 [node name="Circuit" parent="." instance=ExtResource("4_k37an")]
 position = Vector2(0, -4)
+collision_mask = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

@@ -53,6 +53,7 @@ radius = 38.0
 [node name="Bouncer" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_o17vw")
+max_speed = 650.0
 
 [node name="Dust" type="GPUParticles2D" parent="."]
 unique_name_in_owner = true
@@ -92,3 +93,22 @@ unique_name_in_owner = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(0, -26)
 shape = SubResource("CircleShape2D_o17vw")
+
+[node name="RayCasts" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RayCast2D" type="RayCast2D" parent="RayCasts"]
+rotation = 0.7853982
+target_position = Vector2(100, 0)
+
+[node name="RayCast2D2" type="RayCast2D" parent="RayCasts"]
+rotation = -0.7853982
+target_position = Vector2(-100, 0)
+
+[node name="RayCast2D3" type="RayCast2D" parent="RayCasts"]
+rotation = -1.308995
+target_position = Vector2(-100, 0)
+
+[node name="RayCast2D4" type="RayCast2D" parent="RayCasts"]
+rotation = -1.8325931
+target_position = Vector2(-100, 0)

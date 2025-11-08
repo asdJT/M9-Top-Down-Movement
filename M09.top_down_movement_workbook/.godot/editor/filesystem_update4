@@ -4,3 +4,6 @@ res://assets/character_contour.gdshader
 res://addons/gdpractice/assets/theme.tres
 res://ray_cast_2d.gd
 res://ray_test.tscn
+res://lessons/bouncer.tscn
+res://lessons/game.tscn
+res://lessons/runner.tscn
